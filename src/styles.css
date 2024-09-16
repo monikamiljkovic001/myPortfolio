@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* .cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(81, 171, 236, 0.795) !important;
+    z-index: 9999 !important; 
+  } */
+  
+  /* Cursor scaling effect on hover */
+  /* a:hover ~ .cursor,
+  button:hover ~ .cursor {
+    transform: scale(2.5);
+  } */
+
+p{
+  margin: 0!important;
+}

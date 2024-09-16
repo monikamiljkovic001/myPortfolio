@@ -1,0 +1,78 @@
+* {
+  margin: auto 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(24, 0, 46);
+  width: 50%;
+  margin: auto;
+}
+.container {
+  margin-top: 5em;
+}
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4em;
+}
+.titleGuess {
+  text-align: center;
+  font-size: 3em;
+  color: rgb(233, 51, 51);
+}
+.guessNumBox {
+  width: 27%;
+  text-align: center;
+  padding: 5em 0em;
+  margin: auto;
+  background-color: rgba(255, 228, 196, 0);
+  border: 10px rgb(229, 255, 0) dotted;
+  border-radius: 12em;
+  /* border-radius: 10em; */
+}
+#guessNum {
+  color: white;
+  font-size: 60px;
+}
+
+.inputCheck {
+  background-color: rgba(240, 248, 255, 0);
+  padding: 1.2em;
+  border: 2px rgb(229, 255, 0) solid;
+
+  border: 2px solid;
+  font-size: 20px;
+  text-align: center;
+  color: whitesmoke;
+}
+.btnGuess,
+.btnTryAgain {
+  padding: 7px;
+  background-color: rgba(255, 250, 250, 0);
+  color: white;
+  margin-left: 5px;
+}
+
+button {
+  transition-duration: 0.3s;
+}
+
+button:hover {
+  background-color: #4c82af; /* Green */
+  color: white;
+}
+
+#goodLuck {
+  font-size: 4em;
+  color: aqua;
+}
+.score {
+  margin-top: 1em;
+  color: white;
+}
+.oneToTen {
+  margin-top: 5em;
+  text-align: right;
+  color: rgb(219, 143, 154);
+}

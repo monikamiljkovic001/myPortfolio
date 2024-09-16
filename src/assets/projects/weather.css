@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: aquamarine;
+}
+h1 {
+}
+h2 {
+  color: rgb(255, 0, 212);
+  color: antiquewhite;
+}
+h3 {
+  color: wheat;
+}
+body {
+  background-color: rgb(0, 0, 0);
+}
+.weather {
+  margin-top: 3rem;
+  text-align: center;
+  padding: 50px;
+  background-color: rgba(31, 53, 53, 0.082);
+}
+button {
+  border: 0.5px solid;
+  border-color: rgba(238, 0, 178, 0.068);
+  border-radius: 5px;
+  padding: 7px;
+  background-color: rgba(0, 0, 0, 0.137);
+}
+button:hover {
+  background-color: rgba(250, 235, 215, 0.11);
+}
+
+input {
+  background-color: rgba(1, 0, 14, 0.137);
+  border: none;
+  border-radius: 5px;
+  padding: 7px;
+  font-style: bold;
+  text-align: center;
+  border: 1px solid wheat;
+}
+
+h1,
+h2 {
+  padding: 25px;
+}

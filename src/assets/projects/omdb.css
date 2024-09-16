@@ -1,0 +1,63 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto";
+  background-image: url(./images/726447.jpg);
+}
+p {
+  font-size: 14px;
+}
+h6 {
+  font-size: 0.5em;
+}
+.showMovie {
+  align-items: center;
+  background-color: rgba(2, 4, 36, 0.514);
+  color: whitesmoke;
+}
+.box {
+  display: flex;
+  align-items: center;
+}
+.detailsBox {
+  margin: 20px;
+}
+.titleYear {
+  display: inline-block;
+  margin-left: 10px;
+}
+#year {
+  color: orange;
+}
+.runGenRel {
+  display: inline;
+  padding: 0px 12px;
+}
+h4 {
+  margin-top: 20px;
+}
+
+.actorCol {
+  color: orange;
+}
+.directorDis,
+.writerDis,
+.actorDis,
+.rating {
+  display: inline-block;
+}
+.ratingBox {
+  margin: 30px;
+  display: inline-block;
+}
+.starImg {
+  width: 20px;
+  height: 20px;
+}
+#omdbSearch {
+  color: whitesmoke;
+  padding-right: 10px;
+}

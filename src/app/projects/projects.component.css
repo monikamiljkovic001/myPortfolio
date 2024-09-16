@@ -1,0 +1,23 @@
+
+.scrollbar-hidden {
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+  
+  
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; 
+  }
+  
+  .project-tile {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+  
+  .project-tile:hover {
+    transform: scale(1.05); 
+
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }

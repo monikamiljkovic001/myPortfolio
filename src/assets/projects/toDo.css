@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+body {
+  background-color: black;
+  color: aliceblue;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+.toDo {
+  text-align: center;
+  margin: 4em auto;
+  padding: 3em;
+}
+.toDo h1 {
+  margin: 0.5em auto;
+  color: white;
+}
+.tasks {
+  display: flex;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  color: white;
+  width: 50%;
+  padding: 0.5em 2em;
+}
+#item1 {
+  flex-grow: 1;
+}
+#buttonAdd,
+.btnDelete,
+#myListBtn,
+input {
+  padding: 0.2em 0.8em;
+  color: aliceblue;
+  border: 1px solid rgb(247, 0, 255);
+  background-color: rgba(233, 228, 231, 0);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  cursor: pointer;
+}
+#myListBtn {
+  color: rgb(81, 255, 0);
+}
+.btnDelete {
+  border: 1px solid rgb(0, 81, 255);
+}
+#buttonAdd:hover,
+#myListBtn:hover {
+  background-color: rgba(195, 148, 207, 0.068);
+  transition: 0.2s;
+  color: rgb(247, 0, 255);
+}
+.btnDelete:hover {
+  background-color: rgba(195, 148, 207, 0.068);
+  transition: 0.2s;
+  color: rgb(0, 81, 255);
+}
+.btnCheck {
+  border: 1px solid rgb(81, 255, 0);
+  width: 2em;
+  height: 2em;
+  margin-left: 1.2em;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+}
+.hidden {
+  display: none;
+}
+.checkedList {
+  position: fixed;
+  margin: 0 auto;
+  width: 50%;
+  left: 25%;
+  top: 10%;
+  text-align: left;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid whitesmoke;
+  padding: 3em;
+  height: 80%;
+}
+.checkedList h1 {
+  text-align: center;
+  padding-bottom: 1em;
+}
+#closeX {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+}

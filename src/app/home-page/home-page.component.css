@@ -1,0 +1,42 @@
+#design_text{
+    transition: color 0.6s ease-in-out
+}
+
+.line span {
+    width: 30%;
+    border: 0.6px solid #DDCEFF ;
+    position: absolute;
+    left: 0;
+    top: 48%;
+    animation-name: line;
+    animation-duration: 1.3s;
+  }
+
+  @keyframes line {
+    0% {
+      width: 0;
+      right: 0;
+      top: 48%;
+    }
+    50% {
+      width: 40%;
+    }
+    100% {
+      top: 48%;
+    }
+  }
+
+  img{
+    filter: grayscale(0%);
+  }
+
+
+.changeColor{
+  color:aquamarine
+}
+
+.downloadCv:hover{
+  background-color: black;
+  border:1px solid #DDCEFF;
+  color: #DDCEFF;
+}
