@@ -20,9 +20,10 @@ projects = [
   { class: 'game',  name: 'Game', imageUrl: 'assets/images/game.jpg' },
   { class: 'socialMedia',  name: 'Social Media',  imageUrl: 'assets/images/socialmedia.jpg' },
   { class: 'guessNum', name: 'Guess The Number',  imageUrl: 'assets/images/guessNum.jpg'},
-  { folder: 'theWilliam',  name: 'The William Restaurant', imageUrl: 'assets/images/theWilliam.jpg' },
+  { folder: 'theWilliam',  name: 'The William', imageUrl: 'assets/images/theWilliam.jpg' },
 ];
   
+
 showProjectInfo(name: string,) {
   this.isHovered = true;
   this.projectName = name;
@@ -36,10 +37,11 @@ hideProjectInfo() {
 
 
 handleClick(project: any) {
+
   let url: string;
-
+   
   if (project.name === 'The William') {
-
+    console.log(project.name);
     url = `https://github.com/monikamiljkovic001/theWilliam`;  
   } else if (project.folder) {
     url = `assets/projects/${project.folder}/src/index.html`; 
