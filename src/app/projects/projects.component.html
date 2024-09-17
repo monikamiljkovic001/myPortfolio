@@ -1,29 +1,36 @@
-<div class="min-h-screen w-full bg-black px-[10vw] gap-2 flex flex-col md:flex-row justify-center items-center overflow-x-auto scrollbar-hidden  py-[15vh]"> 
+<div class="min-h-screen w-full bg-black px-[10vw] gap-10 flex flex-col justify-center md:items-center overflow-x-auto scrollbar-hidden py-[15vh] md:py-[5vw] lg:py-5"> 
+   
+    <div class="fixed top-[5vh] right-[10vw] flex justify-end">
+        <div class="flex justify-center w-[6rem] bg-black border-[1px] border-main rounded-[1rem] py-[0.8rem] px-[1rem]">
+            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
+            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
+        </div>
+    </div>
 
     <div class="flex flex-col md:flex-row items-center gap-2 overflow-x-auto scrollbar-hidden">
-        <div><p class="text-[2rem] md:py-0 py-20 text-primary ">PROJECTS</p></div>
         <div *ngFor="let project of projects" 
-             class="project-tile h-30 w-30 md:w-40 md:h-40 flex items-center justify-center cursor-pointer"
-             (mouseover)="showProjectInfo(project.name, project.description)" 
+             class="project-tile h-auto w-[80vw] md:w-[10vw] md:h-[10vw] flex items-center justify-center cursor-pointer"
+             (mouseover)="showProjectInfo(project.name)" 
              (mouseout)="hideProjectInfo()" 
              (click)="handleClick(project)">
             <img [src]="project.imageUrl" alt="{{project.name}}" class="object-cover w-full h-full" />
         </div>
     </div>
 
+    <div class="flex flex-col items-end gap-[1rem]">
+        <div class="flex flex-row justify-between items-center w-[80vw] md:w-[62vw] border-b-[1px] border-main">     
+            <p class="text-[2rem] py-[1rem] text-grey3 font-thin">PROJECTS</p>          
+            <p *ngIf="isHovered" class="text-lg md:text-xl text-lightBlue">{{projectName}}</p>             
+        </div>
+        <div class="flex flex-row gap-12">
+            <a href="https://www.linkedin.com/in/monikamiljkovic/"
+            class="text-white text-base">linkedin</a>
+            <a href="https://github.com/monikamiljkovic"
+            class="text-white text-base">github</a>
+         </div>
+    </div>
+   
 </div>
 
-<div *ngIf="isHovered" class="hidden md:block absolute md:bottom-[10vw] w-full bg-black text-white p-5 text-center">
-    <p class="text-lg md:text-xl text-lightBlue">{{projectName}}</p>
-    <p class="text-sm md:text-lg text-lightGrey">{{projectDescription}}</p>
-</div>
+<app-sidenav [isOpen]="isSideNavOpen" (closeSidenav)="closeSidenav()"></app-sidenav>
 
-<div class="relative">
-
-    <div class="flex flex-row gap-12 absolute bottom-8 right-[10vw]">
-        <a href="https://www.linkedin.com/in/monikamiljkovic/"
-        class="text-white text-base">linkedin</a>
-        <a href="https://github.com/monikamiljkovic"
-        class="text-white text-base">github</a>
-     </div>
-</div>

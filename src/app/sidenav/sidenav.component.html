@@ -1,0 +1,12 @@
+<div [ngClass]="{'translate_y_full': !isOpen, 'translate_y_0': isOpen}" 
+     class="sidenav h-[30%] overflow-hidden bg-black z-50 flex flex-col sm:flex-row justify-center sm:justify-between sm:items-center px-[10vw] border-t-[1px] border-main gap-5">
+    <div class="nav_items flex flex-row gap-10 items-center" (click)="close()">
+        <a routerLink="" class="text-grey3 text-lg font-medium">HOME</a>
+        <a routerLink="/about" class="text-grey3 text-lg font-medium">ABOUT</a>
+        <a routerLink="/projects" class="text-grey3 text-lg font-medium">PROJECTS</a>
+    </div>
+    <div class="flex flex-row gap-10">
+        <a href="https://www.linkedin.com/in/monikamiljkovic/" class="text-primary text-base">linkedin</a>
+        <a href="https://github.com/monikamiljkovic001?tab=repositories" class="text-primary text-base">github</a>
+    </div>
+</div>

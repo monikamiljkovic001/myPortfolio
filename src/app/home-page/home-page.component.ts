@@ -5,21 +5,22 @@ import { Component, AfterViewInit } from '@angular/core';
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements AfterViewInit{
-  images = [
-    './assets/images/header.png',
-    './assets/images/slide1.png',
-    './assets/images/slide2.png'
-  ];
+export class HomePageComponent{
 
-  isWhite: boolean = false;
-  isHovered: boolean = false
+  isSideNavOpen: boolean = false;
+  nav_item: any;
 
-ngAfterViewInit(): void {
- setTimeout(()=>{
-  this.isWhite = true;
- },1300)
-}
+  toggleSidenav() : void {
+  this.isSideNavOpen = !this.isSideNavOpen;
+  }
 
-  
+  closeSidenav(): void {
+    this.isSideNavOpen = false; 
+  }
+
+
+  onLink(event: any) {
+    this.toggleSidenav();  
+  }
+
 }

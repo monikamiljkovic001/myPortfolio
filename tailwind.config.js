@@ -9,13 +9,15 @@ module.exports = {
         roboto: ['Roboto', 'sans-serif'],
       },
       colors: {
-        'primary': '#FFFFFF',
+        'primary': '#F1F1F1',
         'lightPurple' : '#DDCEFF',
         'lightGrey': '#E0DDDD',
-        'lightGreen' : '#7DF6A6',
+        'lightGreen' : '#13FF99',
         'lightBlue' : '#94FBFF',
         'deepBlue' : '#12ADA0',
         'deepGreen' : '#D1FF66',
+        'deepGrey' :'#212121',
+         'grey3' :'#C5C4C4',
       },
       borderColor: {
         'lightGreen': '#95FF5C', 
@@ -23,6 +25,7 @@ module.exports = {
         'secondLine': '#896635',
         'insideLine': '#372711',
         'bookLine' :'#252B25',
+        'main' : '#161414',
       },
       
       fontSize: {

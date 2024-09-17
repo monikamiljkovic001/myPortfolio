@@ -1,0 +1,18 @@
+.sidenav {
+    position: fixed;    
+    bottom: 0;            
+    width: 100%;          
+    height: 20%;          
+    transition: transform 0.5s ease-in-out;
+    transform: translateY(100%);  
+    z-index: 50;         
+  }
+  
+  .translate_y_full {
+    transform: translateY(100%);
+  }
+  
+  .translate_y_0 {
+    transform: translateY(0);  
+  }
+  

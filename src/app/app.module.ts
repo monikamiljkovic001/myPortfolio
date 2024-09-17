@@ -13,9 +13,9 @@ import { AboutComponent } from './about/about.component';
 import { BioComponent } from './about_children/bio/bio.component';
 import { EducationComponent } from './about_children/education/education.component';
 
-import { ContactComponent } from './about_children/contact/contact.component';
 import { ExperienceComponent } from './about_children/experience/experience.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -27,8 +27,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BioComponent,
     EducationComponent,
     ExperienceComponent,
-    ContactComponent,
-
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
