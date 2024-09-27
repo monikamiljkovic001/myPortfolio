@@ -18,7 +18,6 @@ export class HomePageComponent{
     this.isSideNavOpen = false; 
   }
 
-
   onLink(event: any) {
     this.toggleSidenav();  
   }

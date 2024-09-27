@@ -2,18 +2,18 @@
     
     <div class="fixed top-[5vh] right-[10vw] flex justify-end md:hidden">
         <div class="flex justify-center w-[6rem] bg-black border-[1px] border-main rounded-[1rem] py-[0.8rem] px-[1rem]">
-            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
-            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
+            <button class="menu link text-[1.2rem] sm:text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
+            <button class="menu link text-[1.2rem] sm:text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
         </div>
     </div>
     
     <div class="flex flex-col md:flex-row lg:flex-col items-end gap-2">
 
-        <div class="flex justify-center items-center w-[80vw] md:w-[40vw] lg:w-[20vw] h-[30vh] py-[2vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
+        <div class="flex justify-center items-center w-[80vw] md:w-[40vw] lg:w-[20vw] sm:h-[30vh] py-[4vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
             <p class="text-grey3 text-[1.5rem] md:text-[2.6vw] lg:text-[1.6vw] leading-8 font-thin">My name is Monika, and I'm a frontend developer passionate about building clean, responsive websites with a focus on user interaction.</p>
         </div>
 
-        <div class="flex justify-center items-center w-[80vw] md:w-[40vw] lg:w-[20vw] h-[30vh] py-[2vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
+        <div class="flex justify-center items-center w-[80vw] md:w-[40vw] lg:w-[20vw] sm:h-[30vh] py-[4vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
             <img src="./assets/images/monika.png" alt="Picture of Me">
         </div>
 
@@ -32,8 +32,8 @@
               </div>
         </div>
 
-        <div class="w-[80vw] lg:w-[30vw] lg:h-[70vh] flex flex-col gap-[3rem] py-[3vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
-            <div class="">
+        <div class="w-[80vw] lg:w-[30vw] lg:h-[70vh] flex flex-col gap-[3rem] py-[4vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
+            <div>
                 <router-outlet></router-outlet>
             </div>
         </div>
@@ -42,7 +42,7 @@
 
     <div class="flex flex-col gap-2">
 
-        <div class="flex flex-row justify-between items-center w-[80vw] lg:w-[30vw] h-[10vh] py-[1vw] px-[2vw] border-[1px] border-main rounded-[1rem]">            
+        <div class="flex flex-row justify-between items-center w-[80vw] lg:w-[30vw] sm:h-[10vh] py-[4vw] px-[2vw] border-[1px] border-main rounded-[1rem]">            
             <div class="logo">
                 <img src="./assets/images/logoGrey.png" alt="Logo MO" class="w-[30%]">
             </div> 
@@ -53,11 +53,13 @@
             </div>
         </div>
         
-        <div class="w-[80vw] lg:w-[30vw] h-[60vh] flex flex-col justify-center gap-[1.5rem] lg:gap-[3rem] py-[2vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
-            <p class="text-lightPurple text-[2rem] leading-[2.5rem]">I'D LOVE TO CONNECT!</p>
-            <div class="flex flex-col gap-[3rem]">
-                <p class="text-lightGrey font-thin text-[1.3rem] leading-6">
-                    Feel free to drop me a message if you have a question, want to collaborate, or just want to say hello.</p>
+        <div class="w-[80vw] lg:w-[30vw] sm:h-[60vh] flex flex-col justify-center gap-[1.8rem] lg:gap-[1.5rem] py-[4vw] px-[2vw] border-[1px] border-main rounded-[1rem]">
+           <div class="flex flex-col gap-3">
+             <p class="text-lightPurple text-[2rem] leading-[2.5rem]">I'D LOVE TO CONNECT!</p>
+               <p class="text-lightGrey font-thin text-[1.3rem] leading-6">
+                   Feel free to drop me a message if you have a question, want to collaborate, or just want to say hello.</p>
+           </div>
+            <div>
                 <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
                     <div class="w-full flex flex-col justify-between gap-12">
                       <div class="flex flex-col gap-5 w-full ">

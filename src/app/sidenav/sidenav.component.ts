@@ -9,8 +9,8 @@ export class SidenavComponent {
   @Input() isOpen: boolean = false;  
   @Output() closeSidenav = new EventEmitter<void>();  
 
-
   close() {
     this.closeSidenav.emit(); 
   }
+  
 }
