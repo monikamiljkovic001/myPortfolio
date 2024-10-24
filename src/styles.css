@@ -42,3 +42,63 @@ p{
 ::-webkit-scrollbar-track {
   background-color: transparent; 
 }
+
+.custom-input{
+  font-size: 1rem;
+  border: none; 
+  font-weight: lighter;
+  border-bottom: 0.8px solid #12ADA0; 
+  background-color: transparent !important; 
+  outline: none; 
+  appearance: none !important;
+  padding: 0 0 0.8rem 0.3rem;
+  color: #F4F4F4;
+}
+
+input[type="text"],
+input[type="number"],
+input[type='email'],
+textarea {
+  appearance: none !important;
+  outline: none;
+  padding: 0.5rem;
+  color: #F4F4F4;
+
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.custom-input:focus {
+  border-bottom-color: #f7d9bc; 
+
+}
+
+.custom-input::placeholder {
+  color: #999; 
+}
+
+.custom-input:-webkit-autofill,
+.custom-input:-webkit-autofill:focus,
+.custom-input:-webkit-autofill:hover {
+  border-bottom: 1px solid #f7d9bc; 
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important; 
+  -webkit-text-fill-color: inherit !important; 
+  -webkit-text-fill-color: #F4F4F4 !important;
+  transition: background-color 5000s ease-in-out 0s; 
+}
+
+
+.custom-input.ng-invalid.ng-touched {
+border-bottom: 1px solid #3f0505; 
+}
+
+
+.send:hover{
+background-color: black;
+border:1px solid #DDCEFF;
+color: #DDCEFF;
+}

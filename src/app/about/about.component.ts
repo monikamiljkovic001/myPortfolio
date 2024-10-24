@@ -15,7 +15,7 @@ links = [
 ]
 
 emailForm!: FormGroup;
-isSubmitted: any;
+
 isSideNavOpen: any;
 
 constructor(private fb: FormBuilder){}
@@ -31,10 +31,7 @@ ngOnInit(){
 
 onSubmit() {
   if(this.emailForm.valid){
-     this.emailForm.reset();
-     this.isSubmitted = true;
-    } else{
-        this.isSubmitted = false;
+     this.emailForm.reset(); 
     } 
 }
 

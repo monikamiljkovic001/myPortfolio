@@ -1,66 +1,101 @@
-<div class="flex flex-col lg:flex-row gap-2 bg-black min-h-full w-full px-[10vw] py-[15vh] md:py-[5vw] lg:py-5">
-    <div class="fixed top-[5vh] right-[10vw] flex justify-end md:hidden">
-        <div class="flex justify-center w-[6rem] bg-black border-[1px] border-main rounded-[1rem] py-[0.8rem] px-[1rem]">
-            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
-            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
+<div class="w-full min-h-full flex flex-col justify-center gap-7 bg-black px-[6vw] py-[13vh]">
+    
+    <!-- MENU -->
+    <div class="fixed top-[5vh] right-[6vw] flex justify-end md:hidden">
+        <div class="flex justify-center bg-black border-[1px] border-main rounded-[1rem] py-[0.8rem] px-[1rem]">
+            <button class="menu link text-[1.5rem] text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
+            <button class="menu link text-[1.5rem] text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
         </div>
+    </div> 
+
+    <!-- FIRST SECTION -->
+    <div class="flex flex-col lg:flex-row justify-between gap-7">
+   
+       <div class="flex flex-col justify-between gap-5">
+   
+           <div class="flex flex-row justify-center md:justify-between items-center border-[1px] border-main rounded-[1rem] py-[2rem] px-[2rem]">
+              
+            <div class="flex items-center hidden md:block">
+                   <img src="./assets/images/logoGrey.png" class=" w-[50%]" alt="Logo">
+               </div>
+
+              <div class="flex flex-col text-center md:text-end">
+                  <p class="text-[2rem] text-grey3 leading-10 font-thin">I'm</p>
+                   <p class="text-primary text-[2.5rem] md:items-end leading-10">Monika Vrzel</p>
+              </div> 
+
+           </div>
+
+           <div class="flex justify-end md:px-[2rem]">
+            <a href="./assets/images/Monika_Vrzel_-_Front_end_Developer.pdf" download>
+                <span class="hover_btn border py-2 px-4 z-10 border-lightGreen">Download CV</span>
+            </a>
+          </div>
+   
+           <div class="flex text-center md:text-start border-[1px] border-main rounded-[1rem] py-[2rem] px-[2rem]">
+               <p class="text-[2.5rem] text-grey3 leading-[4vh] font-thin">Frontend Developer who blends <span class="text-lightGreen lg:text-[2.2vw] font-medium">creativity </span>with code</p>
+           </div>
+         
+       </div>
+       
+         <div class="flex flex-col sm:flex-row justify-between gap-7">
+
+            <div class="flex flex-col justify-center items-center border-[1px] border-main rounded-[1rem] py-[2rem] px-[2rem]">
+                <img src="./assets/images/myDesign.png" alt="MO Photoshop Design" class="w-[50%] md:w-[80%]">
+              </div>
+
+             <div class="flex flex-col justify-between gap-5 border-[1px] border-main rounded-[1rem] py-[2rem] px-[2rem]">
+               <div class="country_rotate w-[4rem] h-[4rem]"></div>
+                    <p class="text-[1.2rem] leading-[2rem] text-primary font-thin">Born in <br><span class="text-[1.5rem]">North Macedonia, Skopje</span></p>
+             </div>
+                     
+         </div>
+   
     </div>
     
- <div class="flex flex-col md:flex-row gap-2">
-    <div class="flex flex-col gap-2 items-end justify-end">
-        <div class="flex flex-col justify-center items-start w-[80vw] md:w-[40vw] lg:w-[20vw] h-[30vh] border-[1px] border-main rounded-[1rem] py-0 md:py-[2vw] px-[2vw] md:justify-end">
-            <p class="text-[3rem] md:text-[5vw] lg:text-[2.5vw] text-grey3 leading-[3rem] md:leading-[5vh] font-thin">I'm</p>
-            <p class="text-[4rem] md:text-[5vw] lg:text-[2.5vw] leading-[4rem] text-primary">Monika Vrzel</p>
-        </div>
-        <div class="w-[80vw] md:w-[40vw] lg:w-[20vw] h-[30vh] border-[1px] border-main rounded-[1rem] py-[2vw] px-[2vw] flex flex-col justify-center">
-            <p class="text-[2.5rem] md:text-[4vw] lg:text-[2vw] text-grey3 leading-[5vh] font-thin">Frontend Developer who blends <span class="text-lightGreen font-medium">creativity </span>with code</p>
-        </div>
-      </div>
-    
-      <div class="md:w-[40vw] lg:w-[20vw] md:h-[80vh] border-[1px] border-main rounded-[1rem] py-[2vw] px-[2vw] flex flex-col justify-center">
-        <img src="./assets/images/myDesign.png" alt="MO Photoshop Design">
-      </div>
- </div>
- 
-  <div class="flex flex-col md:flex-row lg:flex-col gap-2">
+    <!-- SECOND SECTION -->
+     <div class="flex flex-col xl:flex-row justify-between gap-7 ">
+   
+       <div class="flex flex-col md:flex-row gap-7">
+   
+        <div class="getInTouch flex flex-col flex-1 justify-end gap-2 text-lightPurple leading-10 text-[2rem] lg:pb-10 md:w-[20vw] order-2 md:order-1">
+            <div class="overflow-hidden">
+                <p class="inline-block animate-[moveRightToLeft_10s_linear_infinite] whitespace-nowrap font-thin">
+                    I'd love to hear from you! Feel free to drop me a message.
+                </p>
+            </div>
+               <p class="text-deepBlue text-center md:text-start">LET'S GET IN</p> 
+                   <button (click)="toggleGetInTouch()" class="border border-lightGreen rounded-xl py-2 border-radius text-[1.5rem] font-thin">TOUCH</button> 
+        </div> 
 
-    <div class="flex flex-col md:flex-row">
-        <div class="flex justify-center md:justify-end items-center md:items-end px-[2vw] py-[1vw] w-[20vw] md:w-[15vw] pb-3 md:pb-0">
-            <img src="./assets/images/logoGrey.png" alt="Logo">
+        <div class="flex flex-col justify-center text-center md:text-start gap-5 border-[1px] border-main rounded-[1rem] py-[2rem] px-[2rem] order-1 md:order-2">
+                   <p class="text-[2rem] text-grey3 font-thin">MINIMALIST</p>
+                   <p class="text-[2.5rem] text-grey3">MOTHER</p>
+                   <p class="text-[2.5rem] text-deepBlue">FRIEND</p>
+                   <p class="text-[2rem] text-lightGreen font-thin">ENTHUSIASTIC</p>
         </div>
-        <div class="md:w-[30vw] lg:w-[20vw] h-[40vh] border-[1px] border-main rounded-[1rem] py-[3vw] px-[2vw] flex flex-col gap-6 justify-center">
-            <p class="text-[3rem] md:text-[4vw] lg:text-[2vw] text-grey3 font-thin">MINIMALIST</p>
-            <p class="text-[3rem] md:text-[4vw] lg:text-[2vw] text-grey3">MOTHER</p>
-            <p class="text-[3rem] md:text-[4vw] lg:text-[2vw] text-deepBlue">FRIEND</p>
-            <p class="text-[2.3rem] md:text-[4vw] lg:text-[2.2vw] text-lightGreen font-thin">ENTHUSIASTIC</p>
-        </div>
-    </div>
-
-    <div class="flex flex-col justify-between md:h-[40vh] w-[80vw] md:w-[40vw] border-[1px] border-main rounded-[1rem] py-[2vw] px-[2vw]">
+         
+       </div>
+   
+       <div class="flex flex-col justify-between md:h-[35vh] border-[1px] border-main rounded-[1rem] py-[2vw] px-[3vw] w-full">
+           
         <div class="hidden md:block md:flex justify-end">
-            <button class="menu link md:text-[3vw] lg:text-[1.5vw] text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
-            <button class="menu link md:text-[3vw] lg:text-[1.5vw] text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
+            <button class="hoverText menu link md:text-[3vw] lg:text-[2rem] text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
+            <button class="menu link md:text-[3vw] lg:text-[2rem] text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
         </div>
-        <div class="flex flex-col lg:flex-row justify-between py-[3vw] md:py-0 items-end gap-8 md:gap-5">
-            <div class="flex flex-row gap-[2vw] order-2 md:order-1">
-                <a href="https://www.linkedin.com/in/monikamiljkovic/"
-                class="text-primary text-base">linkedin</a>
-                <a href="https://github.com/monikamiljkovic001?tab=repositories"
-                class="text-primary text-base">github</a>
-            </div>
-            <div class="flex flex-row gap-7 order-1 md:order-2">
-                <a href="./assets/images/Monika_Vrzel_-_Front_end_Developer.pdf" download 
-                class="downloadCv border-[1px] border-deepBlue rounded-[1rem] text-grey3 py-2 px-2">Download CV</a>
-                <a routerLink="about"
-                class="downloadCv border-[1px] border-deepBlue rounded-[1rem] text-grey3 py-2 px-2">Contact Me</a>
-            </div>
+        
+        <div class="flex flex-row gap-[10vw] md:gap-[2vw]">
+               <a href="https://www.linkedin.com/in/monikamiljkovic/"
+                   class="hoverText text-primary text-base">linkedin</a>
+               <a href="https://github.com/monikamiljkovic001?tab=repositories"
+               class="hoverText text-primary text-base">github</a>
         </div>
-    </div>
-
-  </div>
-
+          
+       </div>
+   
+     </div>
+   
 </div>
 
 <app-sidenav [isOpen]="isSideNavOpen" (closeSidenav)="closeSidenav()"></app-sidenav>
-
-
+<app-get-in-touch [isGetInTouchOpen]="isGetInTouchOpen" (onClose)="closePopGetInTouch()"></app-get-in-touch>

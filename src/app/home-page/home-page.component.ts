@@ -1,14 +1,17 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, ViewEncapsulation} from '@angular/core';
 
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  styleUrls: ['./home-page.component.css'],
+  encapsulation: ViewEncapsulation.None // Disable encapsulation
 })
 export class HomePageComponent{
 
   isSideNavOpen: boolean = false;
   nav_item: any;
+  isGetInTouchOpen = false;
+  
 
   toggleSidenav() : void {
   this.isSideNavOpen = !this.isSideNavOpen;
@@ -22,4 +25,12 @@ export class HomePageComponent{
     this.toggleSidenav();  
   }
 
+  toggleGetInTouch(){
+    this.isGetInTouchOpen = !this.isGetInTouchOpen
+  }
+
+  closePopGetInTouch(){
+    this.isGetInTouchOpen = false;
+  }
+  
 }

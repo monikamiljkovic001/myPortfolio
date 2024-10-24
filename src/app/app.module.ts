@@ -16,6 +16,7 @@ import { EducationComponent } from './about_children/education/education.compone
 import { ExperienceComponent } from './about_children/experience/experience.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { GetInTouchComponent } from './get-in-touch/get-in-touch.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     EducationComponent,
     ExperienceComponent,
     SidenavComponent,
+    GetInTouchComponent,
   ],
   imports: [
     BrowserModule,

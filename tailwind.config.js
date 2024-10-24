@@ -18,6 +18,7 @@ module.exports = {
         'deepGreen' : '#D1FF66',
         'deepGrey' :'#212121',
          'grey3' :'#C5C4C4',
+         'hover_text' :'0cada0'       
       },
       borderColor: {
         'lightGreen': '#95FF5C', 

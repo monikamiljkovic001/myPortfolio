@@ -1,0 +1,34 @@
+<div class="z-20 fixed" *ngIf="isGetInTouchOpen">
+    <div class="bg-black opacity-[70%] fixed inset-0 z-0" (click)="onClosePopInTouch($event)"></div>
+    <div class="inCenter fixed flex flex-col gap-2 items-center">
+            <p class="text-[2rem] text-deepGreen z-30">Let's Talk</p>
+            <div class="gap-2 bg-black border border-lightGreen rounded-2xl py-[3rem] px-[3rem] items-center gap-8">
+                <form [formGroup]="emailForm" action="submit">
+                    <div class="flex flex-col gap-5">
+                        <div class="flex flex-col md:flex-row gap-4">
+                            <input type="text" 
+                            formControlName="name" 
+                            placeholder="Name"
+                            class="custom-input w-full"
+                            >
+                            <input type="email" 
+                            class="type" 
+                            placeholder="Email"
+                            class="custom-input w-full"
+                            >
+                        </div> 
+                        <textarea formControlName="message" 
+                        placeholder="Your message"
+                        class="custom-input w-full "></textarea>
+                        <button
+                        type="submit"
+                        (click)="onSubmit()"
+                        class="send border-[1px] border-deepBlue rounded-[1rem] w-[6rem] text-grey3 py-2 px-2">
+                        send
+                      </button>
+                    </div>
+                </form>
+   
+        </div>
+     </div>
+</div>

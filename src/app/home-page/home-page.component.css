@@ -1,7 +1,112 @@
+.hover_btn {
+  color: #333;
+  background-color: transparent;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: color 0.3s;
+}
 
-.downloadCv:hover{
-  background-color: black;
-  border:1px solid #DDCEFF;
+.hover_btn:hover {
   color: #DDCEFF;
 }
 
+
+.hoverText:hover {
+  color: #0cada0;
+}
+
+/* .angle-rotate::before,
+.angle-rotate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+}
+
+.angle-rotate::before {
+  border-top-color: #bcff02;
+  border-right-color: #bcff02;
+  animation: border-rotate 2s linear infinite;
+}
+
+.angle-rotate::after {
+  border-bottom-color: #bcff02;
+  border-left-color: #bcff02;
+  animation: border-rotate 2s linear infinite reverse;
+} */
+
+.country_rotate {
+  position: relative;
+  border:1px solid;
+  border-radius: 100%;
+}
+
+.country_rotate::before,
+.country_rotate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+}
+
+.country_rotate::before {
+  border-top-color: #bcff02;
+  border-right-color: #ff0202;
+  animation: border-rotate 2s linear infinite;
+}
+
+.country_rotate::after {
+  border-bottom-color: #bcff02;
+  border-left-color: #ff0202;
+  animation: border-rotate 2s linear infinite ;
+}
+
+@keyframes border-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes border-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.getInTouch button:hover{
+color:#0cada0;
+transition: 0.3s;
+}
+
+.isInTouch {
+  justify-content: start;
+  transition: all 1s ease-in-out; 
+}
+
+span {
+  transition: all 1s ease-in-out; 
+}
+
+@keyframes moveRightToLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%); 
+  }
+}
