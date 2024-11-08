@@ -9,25 +9,9 @@ body{
   font-size: clamp(1rem, 2vw, 1.5rem); 
 }
 
-/* .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: rgba(81, 171, 236, 0.795) !important;
-    z-index: 9999 !important; 
-  } */
-  
-  /* Cursor scaling effect on hover */
-  /* a:hover ~ .cursor,
-  button:hover ~ .cursor {
-    transform: scale(2.5);
-  } */
-
 p{
-  margin: 0!important;
+  margin: 0 !important;
 }
-
 
 ::-webkit-scrollbar {
   width: 1px;
@@ -102,3 +86,15 @@ background-color: black;
 border:1px solid #DDCEFF;
 color: #DDCEFF;
 }
+
+.hBl:hover{
+  color: #12ADA0
+}
+.hGrn:hover{
+  color: #D1FF66
+}
+
+.deepness{
+  background-color: rgba(0, 0, 0, 0.603);
+}
+

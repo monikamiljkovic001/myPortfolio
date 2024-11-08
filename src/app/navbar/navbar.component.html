@@ -1,47 +1,16 @@
-<!-- <div class="navbar bg-black fixed w-full flex flex-row justify-between items-center py-10 px-[10vw] z-50">
-
+<div class="w-full flex flex-row justify-between items-center border-b-[1px] border-main px-[2rem] py-6">
    <div class="logo">
       <a routerLink="/">
-         <img src="/assets/images/logo.png" alt="Logo"
-         class="w-12 md:w-14">
+         <img src="./assets/images/logo.png" alt="Logo MO" class="w-[60%]" />
       </a>
    </div>
 
-   <div class="flex flex-col gap-2 cursor-pointer" (click)="toggleSidenav()" (mouseover)="updateNavItem('close')"
-   (mouseleave)="clearNewItem()">
-      <div  class="bar1 border border-1 rounded w-8 md:w-10"></div>
-      <div [ngClass]="{'open': isSideNavOpen}" class="bar2 border border-1 rounded w-8 md:w-10"></div>
+   <div class="flex justify-center text-[1.3rem] lg:text-[1.5rem] text-grey3">
+      <button class="hBl" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">
+         menu
+      </button>
+      <button class="hGrn" (click)="toggleSidenav()" *ngIf="isSideNavOpen">
+         close
+      </button>
    </div>
-
-</div> -->
-
-<!-- sidenav -->
-
-<!-- <div [ngClass]="{'translate_x_full' : !isSideNavOpen, 'translate_x_0' : isSideNavOpen}" 
-class="sidenav fixed w-full h-[100%] overflow-hidden bg-black z-10 flex flex-row items-center">
-<div class="nav_item hidden md:block absolute flex flex-col justify-center items-center right-[50%]">
-      <p class="text-lightPurple text-[3rem]">{{nav_item === '' ? 'menu' : nav_item}}</p>
 </div>
-<div class="nav_items absolute right-[10vw] flex flex-col justify-center gap-[5vh] md:gap-[20vh] items-end anime_" 
-[@itemsAnimation]="isSideNavOpen ? 'open' : 'closed'"
-(click)="onLink($event)"
->
-<a  routerLink="" class="nav_item text-primary text-lg font-thin"
-(mouseover)="updateNavItem('HOME')"
-(mouseleave)="clearNewItem()">HOME</a>
-<a  routerLink="/about" class="nav_item text-primary text-lg font-thin md:pr-[5vw]"
-(mouseover)="updateNavItem('ABOUT')"
-(mouseleave)="clearNewItem()">ABOUT</a>
-<a  routerLink="/projects" class="nav_item text-primary text-lg font-thin"
-(mouseover)="updateNavItem('PROJECTS')"
-(mouseleave)="clearNewItem()">PROJECTS</a>
-</div>
-
-<div class="flex flex-row gap-12 absolute bottom-10 md:bottom-20 right-[10vw] md:left-[10vw]">
-   <a href="https://www.linkedin.com/in/monikamiljkovic/"
-   class="text-white text-base">linkedin</a>
-   <a href="https://github.com/monikamiljkovic"
-   class="text-white text-base">github</a>
-</div>
-</div> -->
-

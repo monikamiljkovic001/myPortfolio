@@ -11,34 +11,6 @@
 }
 
 
-.hoverText:hover {
-  color: #0cada0;
-}
-
-/* .angle-rotate::before,
-.angle-rotate::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border: 2px solid transparent;
-  border-radius: 1rem;
-}
-
-.angle-rotate::before {
-  border-top-color: #bcff02;
-  border-right-color: #bcff02;
-  animation: border-rotate 2s linear infinite;
-}
-
-.angle-rotate::after {
-  border-bottom-color: #bcff02;
-  border-left-color: #bcff02;
-  animation: border-rotate 2s linear infinite reverse;
-} */
-
 .country_rotate {
   position: relative;
   border:1px solid;
@@ -60,16 +32,16 @@
 .country_rotate::before {
   border-top-color: #bcff02;
   border-right-color: #ff0202;
-  animation: border-rotate 2s linear infinite;
+  animation: border_rotate 2s linear infinite;
 }
 
 .country_rotate::after {
   border-bottom-color: #bcff02;
   border-left-color: #ff0202;
-  animation: border-rotate 2s linear infinite ;
+  animation: border_rotate 2s linear infinite ;
 }
 
-@keyframes border-rotate {
+@keyframes border_rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -78,25 +50,6 @@
   }
 }
 
-@keyframes border-rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-.getInTouch button:hover{
-color:#0cada0;
-transition: 0.3s;
-}
-
-.isInTouch {
-  justify-content: start;
-  transition: all 1s ease-in-out; 
-}
 
 span {
   transition: all 1s ease-in-out; 
@@ -104,9 +57,29 @@ span {
 
 @keyframes moveRightToLeft {
   0% {
-    transform: translateX(100%);
+    transform: translateX(150%);
   }
   100% {
     transform: translateX(-100%); 
   }
+}
+
+.animated_text {
+  font-size: clamp(1rem, 10vw, 2rem);
+  transition: opacity 1s ease-in-out;
+}
+
+.shadow_effect{
+  color: #bcff02;
+  font-size: 3rem;
+  font-weight: 100;
+  transition:text-shadow 0.3s ease-in-out
+}
+
+.list_item{
+  flex: 1 1 150px;
+}
+
+.touchBtn:hover {
+color:#bcff02;
 }

@@ -24,7 +24,7 @@ projects = [
 ];
   
 
-showProjectInfo(name: string,) {
+showProjectInfo(name: string) {
   this.isHovered = true;
   this.projectName = name;
 
@@ -39,7 +39,7 @@ hideProjectInfo() {
 handleClick(project: any) {
 
   let url: string;
-   
+  
   if (project.name === 'The William') {
     console.log(project.name);
     url = `https://github.com/monikamiljkovic001/theWilliam`;  

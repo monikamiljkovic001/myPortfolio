@@ -18,6 +18,7 @@ module.exports = {
         'deepGreen' : '#D1FF66',
         'deepGrey' :'#212121',
          'grey3' :'#C5C4C4',
+         'rose' : '#8b0b0b',
          'hover_text' :'0cada0'       
       },
       borderColor: {
@@ -37,9 +38,10 @@ module.exports = {
         '2xl': ['2rem', {
         lineHeight: '2rem',
         fontWeight: '400',
+         'responsive': 'clamp(1rem, 10vw, 2.5rem)',
       }],
       },
     },
   },
-  plugins: [],
+  // plugins: [ require('@tailwindcss/line-clamp'),],
 }

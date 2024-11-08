@@ -4,7 +4,6 @@
     -ms-overflow-style: none; 
   }
   
-  
   .scrollbar-hidden::-webkit-scrollbar {
     display: none; 
   }

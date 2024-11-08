@@ -17,6 +17,8 @@ import { ExperienceComponent } from './about_children/experience/experience.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { GetInTouchComponent } from './get-in-touch/get-in-touch.component';
+import { AboutContactComponent } from './about-contact/about-contact.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { GetInTouchComponent } from './get-in-touch/get-in-touch.component';
     ExperienceComponent,
     SidenavComponent,
     GetInTouchComponent,
+    AboutContactComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

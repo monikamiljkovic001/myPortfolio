@@ -1,36 +1,30 @@
-<div class="min-h-screen w-full bg-black px-[10vw] gap-10 flex flex-col justify-center md:items-center overflow-x-auto scrollbar-hidden py-[15vh] md:py-[5vw] lg:py-5"> 
-   
-    <div class="fixed top-[5vh] right-[10vw] flex justify-end">
-        <div class="flex justify-center w-[6rem] bg-black border-[1px] border-main rounded-[1rem] py-[0.8rem] px-[1rem]">
-            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="!isSideNavOpen">menu</button>
-            <button class="menu link text-[1.5rem]  text-grey3" (click)="toggleSidenav()" *ngIf="isSideNavOpen">close</button>
+<div
+    class="min-h-screen w-full bg-black flex flex-col justify-between gap-14 overflow-x-auto scrollbar-hidden md:px-[6vw]">
+
+    <div class="bg-black opacity-[70%] fixed inset-0 z-0" (click)="closeSidenav()" *ngIf="isSideNavOpen"></div>
+
+    <app-navbar (sidenavToggle)="toggleSidenav()"></app-navbar>
+
+    <div class="overflow-x-auto scrollbar-hidden flex flex-col gap-5">
+        <div class="flex flex-col md:flex-row items-center gap-2 px-[2rem]">
+            <div *ngFor="let project of projects"
+                class="project-tile h-auto w-[80vw] md:w-[10vw] md:h-[10vw] flex items-center justify-center cursor-pointer"
+                (mouseover)="showProjectInfo(project.name)" (mouseout)="hideProjectInfo()"
+                (click)="handleClick(project)">
+                <img [src]="project.imageUrl" alt="{{project.name}}" class="object-cover w-full h-full" />
+            </div>
+        </div>
+
+        <div class="hidden md:flex flex-col items-center md:items-end">
+            <div class="flex flex-row justify-between md:w-[50vw] md:border-b-[1px] border-main px-[2rem]">
+                <p class="text-[2rem] py-[1rem] text-grey3 font-thin">PROJECTS</p>
+                <p *ngIf="isHovered" class=" text-xl text-lightBlue">{{projectName}}</p>
+            </div>
         </div>
     </div>
 
-    <div class="flex flex-col md:flex-row items-center gap-2 overflow-x-auto scrollbar-hidden">
-        <div *ngFor="let project of projects" 
-             class="project-tile h-auto w-[80vw] md:w-[10vw] md:h-[10vw] flex items-center justify-center cursor-pointer"
-             (mouseover)="showProjectInfo(project.name)" 
-             (mouseout)="hideProjectInfo()" 
-             (click)="handleClick(project)">
-            <img [src]="project.imageUrl" alt="{{project.name}}" class="object-cover w-full h-full" />
-        </div>
-    </div>
+    <app-footer></app-footer>
 
-    <div class="flex flex-col items-end gap-[1rem]">
-        <div class="flex flex-row justify-between items-center w-[80vw] md:w-[62vw] border-b-[1px] border-main">     
-            <p class="text-[2rem] py-[1rem] text-grey3 font-thin">PROJECTS</p>          
-            <p *ngIf="isHovered" class="text-lg md:text-xl text-lightBlue">{{projectName}}</p>             
-        </div>
-        <div class="flex flex-row gap-12">
-            <a href="https://www.linkedin.com/in/monikamiljkovic/"
-            class="text-white text-base">linkedin</a>
-            <a href="https://github.com/monikamiljkovic"
-            class="text-white text-base">github</a>
-         </div>
-    </div>
-   
 </div>
 
 <app-sidenav [isOpen]="isSideNavOpen" (closeSidenav)="closeSidenav()"></app-sidenav>
-
