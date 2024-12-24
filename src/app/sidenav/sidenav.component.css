@@ -1,32 +1,32 @@
 .sidenav {
-    position: fixed;    
-    bottom: 0;            
-    width: 100%;                    
-    transition: transform 0.5s ease-in-out;
-    transform: translateY(100%);  
-    z-index: 50;         
-  }
-  
-  .translate_y_full {
-    transform: translateY(100%);
-  }
-  
-  .translate_y_0 {
-    transform: translateY(0);  
-  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(100%);
+  z-index: 50;
+}
 
-  .nav_items .active{
-    transition: color 0.3s ease-in-out
-  }
-  
-  .nav_items .active{
-    color: #ddceff
-  }
+.translate_y_full {
+  transform: translateY(100%);
+}
 
-  a{
-    transition: color 0.3s ease-in-out
-  }
+.translate_y_0 {
+  transform: translateY(0);
+}
 
-  a:hover{
-    color: #ddceff
-  }
+.nav_items .active {
+  transition: color 0.3s ease-in-out;
+}
+
+.nav_items .active {
+  color: #ddceff;
+}
+
+a {
+  transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+  color: #ddceff;
+}

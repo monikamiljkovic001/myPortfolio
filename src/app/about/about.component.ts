@@ -1,38 +1,35 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
 })
 export class AboutComponent {
+  showContactForm: boolean = false;
+  emailNotValid!: boolean;
 
-  showContactForm:boolean = false;
-  emailNotValid!:boolean;
- 
   isSideNavOpen: boolean = false;
   links = [
-    {name: 'Bio', url:'bio'},
-    {name: 'Education', url:'education'},
-    {name: 'Experience', url:'experience'},
-  ]
+    { name: 'Bio', url: 'bio' },
+    { name: 'Education', url: 'education' },
+    { name: 'Experience', url: 'experience' },
+  ];
 
-  toggleSidenav() : void {
+  toggleSidenav(): void {
     this.isSideNavOpen = !this.isSideNavOpen;
   }
 
   closeSidenav(): void {
-      this.isSideNavOpen = false; 
+    this.isSideNavOpen = false;
   }
 
-  onDisplayContact(){
+  onDisplayContact() {
     this.showContactForm = true;
   }
 
   closeForm() {
     this.showContactForm = false;
-    }
-
-
+  }
 }

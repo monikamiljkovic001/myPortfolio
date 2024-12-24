@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -6,15 +6,11 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
+  @Input() isSideNavOpen = false;
+  @Output() sidenavToggle = new EventEmitter();
 
-@Output() sidenavToggle = new EventEmitter()
-isSideNavOpen: boolean = false;
-
-toggleSidenav() {
-  this.isSideNavOpen = !this.isSideNavOpen;
-  this.sidenavToggle.emit();
+  toggleSidenav() {
+    this.isSideNavOpen = !this.isSideNavOpen;
+    this.sidenavToggle.emit();
   }
-
 }
-
-

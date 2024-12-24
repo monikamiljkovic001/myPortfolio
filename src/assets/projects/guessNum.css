@@ -29,7 +29,6 @@ body {
   background-color: rgba(255, 228, 196, 0);
   border: 10px rgb(229, 255, 0) dotted;
   border-radius: 12em;
-  /* border-radius: 10em; */
 }
 #guessNum {
   color: white;
@@ -59,7 +58,7 @@ button {
 }
 
 button:hover {
-  background-color: #4c82af; /* Green */
+  background-color: #4c82af;
   color: white;
 }
 

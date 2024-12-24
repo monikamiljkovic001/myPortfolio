@@ -4,18 +4,15 @@ import { Route, Router } from '@angular/router';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
-  styleUrls: ['./sidenav.component.css']
+  styleUrls: ['./sidenav.component.css'],
 })
 export class SidenavComponent {
+  constructor(public router: Router) {}
 
-  constructor(public router: Router){}
-
-  @Input() isOpen: boolean = false;  
-  @Output() closeSidenav = new EventEmitter<void>();  
-
+  @Input() isOpen: boolean = false;
+  @Output() closeSidenav = new EventEmitter<void>();
 
   close() {
-    this.closeSidenav.emit(); 
+    this.closeSidenav.emit();
   }
-  
 }

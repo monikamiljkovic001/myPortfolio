@@ -7,20 +7,23 @@ import { BioComponent } from './about_children/bio/bio.component';
 import { EducationComponent } from './about_children/education/education.component';
 import { ExperienceComponent } from './about_children/experience/experience.component';
 
-
 const routes: Routes = [
   { path: '', component: HomePageComponent },
-  { path: 'about', component: AboutComponent, children:[
-    {path: '', redirectTo:'bio', pathMatch:'full'},
-    {path: 'bio', component: BioComponent},
-    {path: 'education', component: EducationComponent},
-    {path: 'experience', component: ExperienceComponent},
-  ]},
-  { path: 'projects', component: ProjectsComponent}
+  {
+    path: 'about',
+    component: AboutComponent,
+    children: [
+      { path: '', redirectTo: 'bio', pathMatch: 'full' },
+      { path: 'bio', component: BioComponent },
+      { path: 'education', component: EducationComponent },
+      { path: 'experience', component: ExperienceComponent },
+    ],
+  },
+  { path: 'projects', component: ProjectsComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

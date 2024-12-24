@@ -2,7 +2,7 @@
 
   <div class="bg-black opacity-[70%] fixed inset-0 z-10" (click)="closeSidenav()" *ngIf="isSideNavOpen"></div>
 
-  <app-navbar (sidenavToggle)="toggleSidenav()"></app-navbar>
+  <app-navbar (sidenavToggle)="toggleSidenav()" [isSideNavOpen]="isSideNavOpen" class="z-30"></app-navbar>
 
   <div class="flex flex-col lg:flex-row justify-between items-center gap-14 px-[2rem]">
 
@@ -21,19 +21,17 @@
         </div>
       </div>
 
-      <div class="hidden lg:flex flex-row justify-between items-center">
+      <div class="flex flex-row justify-between items-center">
         <button class="hBl text-primary text-base border-b-[1px] border-b-lightPurple pb-[0.5rem]"
           (click)="onDisplayContact()">Contact Me</button>
 
-        <div class="flex justify-center md:justify-end flex-row gap-10">
+        <div class="hidden lg:flex justify-center md:justify-end flex-row gap-10">
           <a href="https://www.linkedin.com/in/monikamiljkovic/" class="hBl text-primary text-base">linkedin</a>
           <a href="https://github.com/monikamiljkovic001?tab=repositories" class="hBl text-primary text-base">github</a>
         </div>
-
       </div>
 
     </div>
-
 
     <div class="flex flex-col justify-between gap-14 w-full relative">
 
@@ -53,11 +51,15 @@
       </div>
 
 
-      <app-about-contact (close)="closeForm()" class="deepness absolute h-full flex justify-center"
+      <app-about-contact (close)="closeForm()" class="hidden deepness absolute h-full lg:flex justify-center"
         *ngIf="showContactForm"></app-about-contact>
     </div>
 
   </div>
+
+  <app-about-contact (close)="closeForm()"
+    class="lg:hidden deepness fixed h-[100vh] flex justify-center items-center m-0 w-[80vw] left-1/2 transform -translate-x-1/2"
+    *ngIf="showContactForm"></app-about-contact>
 
   <app-footer></app-footer>
 

@@ -1,7 +1,9 @@
-.hire:hover{
-    background-color: black;
-    border:1px solid #DDCEFF;
-    color: #DDCEFF;
-  }
-  .send:hover{
-    border:1px solid #120925;  }
+.hire:hover {
+  background-color: black;
+  border: 1px solid #ddceff;
+  color: #ddceff;
+}
+
+.send:hover {
+  border: 1px solid #120925;
+}

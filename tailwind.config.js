@@ -19,6 +19,7 @@ module.exports = {
         'deepGrey' :'#212121',
          'grey3' :'#C5C4C4',
          'rose' : '#8b0b0b',
+         'redLight': "#d6080a",
          'hover_text' :'0cada0'       
       },
       borderColor: {

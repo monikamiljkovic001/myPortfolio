@@ -1,94 +1,351 @@
 * {
+  margin: 0;
   padding: 0;
-  margin: 0 auto;
   box-sizing: border-box;
+  font-family: "Roboto", serif;
 }
+
+:root {
+  --main: #f2f2f2;
+  --bg: #0d0d0d;
+  --darkText: #0d0d0d;
+  --lightText: #f2f2f2;
+  --onHover: #8c8c8c;
+  --onHoverSec: #dce8f2;
+  --success: #90ee90;
+  --error: #d13734;
+  --primary-font: #26100b;
+}
+
 body {
-  background-color: black;
-  color: aliceblue;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--bg);
 }
-.toDo {
-  text-align: center;
-  margin: 4em auto;
-  padding: 3em;
+
+h2 h4 {
+  font-weight: 300;
 }
-.toDo h1 {
-  margin: 0.5em auto;
-  color: white;
-}
-.tasks {
-  display: flex;
-  border-bottom: 1px solid rgb(214, 214, 214);
-  color: white;
-  width: 50%;
-  padding: 0.5em 2em;
-}
-#item1 {
-  flex-grow: 1;
-}
-#buttonAdd,
-.btnDelete,
-#myListBtn,
-input {
-  padding: 0.2em 0.8em;
-  color: aliceblue;
-  border: 1px solid rgb(247, 0, 255);
-  background-color: rgba(233, 228, 231, 0);
-  font-family: "Plus Jakarta Sans", sans-serif;
+
+#toggleListButton {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+  background-color: transparent;
+  border: none;
+  padding: 0.5em;
+  color: var(--main);
+  font-size: 1rem;
+  font-weight: 800;
   cursor: pointer;
+  z-index: 1000;
 }
-#myListBtn {
-  color: rgb(81, 255, 0);
+
+#toggleListButton::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: var(--main);
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: 0.3s ease-in-out;
 }
-.btnDelete {
-  border: 1px solid rgb(0, 81, 255);
+
+#toggleListButton:hover::after {
+  transform: scaleY(0);
 }
-#buttonAdd:hover,
-#myListBtn:hover {
-  background-color: rgba(195, 148, 207, 0.068);
-  transition: 0.2s;
-  color: rgb(247, 0, 255);
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
 }
-.btnDelete:hover {
-  background-color: rgba(195, 148, 207, 0.068);
-  transition: 0.2s;
-  color: rgb(0, 81, 255);
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  color: var(--lightText);
 }
-.btnCheck {
-  border: 1px solid rgb(81, 255, 0);
-  width: 2em;
-  height: 2em;
-  margin-left: 1.2em;
-  background-color: rgba(0, 0, 0, 0);
-  color: white;
+
+.container > div:nth-child(1) {
+  position: relative;
+  background-image: url("./images/activity1.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  flex: 1;
+  justify-content: center;
+  border-left: 0.5vh solid var(--main);
+  margin-left: 4em;
 }
+
+.container > div:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.container > div:nth-child(1) > h1 {
+  font-size: 3.5rem;
+  background-color: var(--bg);
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+.container > div:nth-child(2) {
+  display: inherit;
+  flex: 2;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+input {
+  background-color: transparent;
+  border: 0.1px solid var(--main);
+  min-width: 20vw;
+  max-width: 50vw;
+  width: 100%;
+  border-radius: 1em;
+  font-size: 1rem;
+  padding: .8em;
+  margin: 1em 0;
+  color: inherit;
+}
+
+.taskAddButton,
+.toggleVisibilityButton {
+  background-color: var(--bg);
+  border: 1px solid var(--main);
+  border-radius: 1em;
+  padding: .8em;
+  font-size: 0.8rem;
+  color: var(--lightText);
+  cursor: pointer;
+  font-weight: 600;
+  align-self: flex-end;
+  transition: 0.2s ease;
+}
+
+.taskAddButton:hover {
+  transform: translateY(-3px);
+  border-color: var(--onHover);
+  color: var(--onHoverSec);
+}
+
+#titleMobile {
+  visibility: hidden;
+}
+
+.taskItem.hidden {
+  display: none;
+}
+
+.taskContainer {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  right: 0;
+  width: 45vw;
+  background-color: var(--main);
+  color: var(--darkText);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition:
+    transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1),
+    visibility 0.6s ease-in-out;
+  visibility: hidden;
+  scrollbar-width: thin;
+  z-index: 2;
+}
+
+.taskContainer.visible {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.taskContainer > h2 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--bg);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  padding: 1em 0;
+}
+
+.taskContainer > div {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  padding: 2em;
+  gap: 1em;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.taskContainer > div > div {
+  display: inherit;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--bg);
+  border-radius: 1em;
+  padding: .5em;
+  width: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease;
+  cursor: pointer;
+  gap: 1em;
+}
+
+.taskContainer > div > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.taskContainer > div > div > p {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--darkText);
+  font-weight: 500;
+}
+
+.taskContainer > div > div > button {
+  background-color: var(--bg);
+  color: var(--main);
+  border: none;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
+  font-size: .8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    0.2s ease,
+    color 0.2s ease;
+}
+
+.taskContainer > div > div > button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: var(--main);
+}
+
 .hidden {
   display: none;
 }
-.checkedList {
+
+.successNotification {
   position: fixed;
-  margin: 0 auto;
-  width: 50%;
-  left: 25%;
-  top: 10%;
-  text-align: left;
-  background-color: rgb(0, 0, 0);
-  border: 1px solid whitesmoke;
-  padding: 3em;
-  height: 80%;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  background-color: var(--bg);
+  padding: .8em;
+  border: .1px solid var(--success);
+  border-radius: 1em;
+  font-size: 1rem;
+  color: var(--success);
+  z-index: 1000;
+  transition: .8s;
 }
-.checkedList h1 {
-  text-align: center;
-  padding-bottom: 1em;
+
+.successNotification.visible {
+  transform: translateX(-50%);
+  visibility: visible;
 }
-#closeX {
-  position: absolute;
-  right: 1em;
-  top: 1em;
-  background-color: black;
-  color: white;
-  border: none;
-  font-size: 2em;
-  cursor: pointer;
+
+.errorNotification {
+  position: fixed;
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  visibility: hidden;
+  background-color: var(--bg);
+  padding: .8em;
+  border: .1px solid var(--error);
+  border-radius: 1em;
+  font-size: 1rem;
+  color: var(--error);
+  z-index: 1000;
+  transition: .8s;
+}
+
+.errorNotification.visible {
+  transform: translateX(-50%);
+  visibility: visible;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container > div:nth-child(1) {
+    margin-left: 0em;
+    flex: 2;
+    z-index: 0;
+  }
+
+  .container > div:nth-child(1) > h1 {
+    visibility: hidden;
+  }
+
+  .container > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    font-size: 1em;
+  }
+
+  .taskAddButton {
+    font-size: .8em;
+  }
+
+  #titleMobile {
+    visibility: visible;
+    font-size: 3em;
+  }
+
+  .container > div:nth-child(2) > div > input {
+    min-width: 100%;
+  }
+
+  .container > div:nth-child(2) > div > h1 {
+    visibility: visible;
+  }
+
+  .taskContainer {
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+  }
+
+  .successNotification {
+    font-size: .8rem;
+  }
+
+  .errorNotification {
+    font-size: .8rem;
+  }
+
+  .taskAddButton,
+  .toggleVisibilityButton {
+    font-size: .8rem;
+  }
 }

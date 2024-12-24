@@ -1,18 +1,12 @@
-<div [ngClass]="{'translate_y_full': !isOpen, 'translate_y_0': isOpen}" 
-     class="sidenav py-[5vh] overflow-hidden bg-black z-50 flex flex-col md:flex-row justify-between md:items-center px-[10vw] border-t-[1px] border-main gap-5">
-    <div class="nav_items flex flex-row gap-10 text-grey3 font-thin" 
-         style="font-size: clamp(0.8rem, 5vw, 1.5rem)"
-         (click)="close()"
-     >
-        <a routerLink=""
-        [ngClass]="{'active' : router.url ==='/'}">HOME</a>
-        <a routerLink="/about"
-        [ngClass]="{'active' : router.url === '/about'}">ABOUT</a>
-        <a routerLink="/projects"
-        [ngClass]="{'active' : router.url === '/projects'}">PROJECTS</a>
+<div [ngClass]="{'translate_y_full': !isOpen, 'translate_y_0': isOpen}"
+    class="sidenav py-[5vh] overflow-hidden bg-black z-50 flex flex-col md:flex-row justify-between md:items-center px-[10vw] border-t-[1px] border-main gap-5">
+    <div class="nav_items flex flex-row gap-10 text-grey3 font-thin" style="font-size: clamp(0.8rem, 5vw, 1.5rem)"
+        (click)="close()">
+        <a routerLink="" [ngClass]="{'active' : router.url ==='/'}">HOME</a>
+        <a routerLink="/about" [ngClass]="{'active' : router.url === '/about'}">ABOUT</a>
+        <a routerLink="/projects" [ngClass]="{'active' : router.url === '/projects'}">PROJECTS</a>
     </div>
-    <div class="flex flex-row gap-10 text-primary text-base"
-    style="font-size: clamp(0.8rem, 4vw, 1rem)">
+    <div class="flex flex-row gap-10 text-primary text-base" style="font-size: clamp(0.8rem, 4vw, 1rem)">
         <a href="https://www.linkedin.com/in/monikamiljkovic/">linkedin</a>
         <a href="https://github.com/monikamiljkovic001?tab=repositories">github</a>
     </div>

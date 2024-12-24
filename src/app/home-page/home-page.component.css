@@ -7,19 +7,18 @@
 }
 
 .hover_btn:hover {
-  color: #DDCEFF;
+  color: #ddceff;
 }
-
 
 .country_rotate {
   position: relative;
-  border:1px solid;
+  border: 1px solid;
   border-radius: 100%;
 }
 
 .country_rotate::before,
 .country_rotate::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -38,7 +37,7 @@
 .country_rotate::after {
   border-bottom-color: #bcff02;
   border-left-color: #ff0202;
-  animation: border_rotate 2s linear infinite ;
+  animation: border_rotate 2s linear infinite;
 }
 
 @keyframes border_rotate {
@@ -50,9 +49,8 @@
   }
 }
 
-
 span {
-  transition: all 1s ease-in-out; 
+  transition: all 1s ease-in-out;
 }
 
 @keyframes moveRightToLeft {
@@ -60,7 +58,7 @@ span {
     transform: translateX(150%);
   }
   100% {
-    transform: translateX(-100%); 
+    transform: translateX(-100%);
   }
 }
 
@@ -69,17 +67,17 @@ span {
   transition: opacity 1s ease-in-out;
 }
 
-.shadow_effect{
+.shadow_effect {
   color: #bcff02;
   font-size: 3rem;
   font-weight: 100;
-  transition:text-shadow 0.3s ease-in-out
+  transition: text-shadow 0.3s ease-in-out;
 }
 
-.list_item{
+.list_item {
   flex: 1 1 150px;
 }
 
 .touchBtn:hover {
-color:#bcff02;
+  color: #bcff02;
 }

@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="socialMedia.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <title>Project</title>
-  </head>
-  <body>
-    <div class="header-container">
-      <label class="switch">
-        <input type="checkbox" onclick="nightMode()" />
-        <span class="slider round"></span>
-      </label>
-    </div>
 
-    <div class="layout_container">
-      <div class="cards"></div>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="socialMedia.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap"
+    rel="stylesheet" />
+  <title>Project</title>
+</head>
 
-    <div class="btn">
-      <button class="load_more" onclick="loadMoreCards()">Load More</button>
-    </div>
+<body>
+  <div class="header-container">
+    <label class="switch">
+      <input type="checkbox" onclick="nightMode()" />
+      <span class="slider round"></span>
+    </label>
+  </div>
 
-    <script src="socialMedia.js"></script>
-  </body>
+  <div class="layout_container">
+    <div class="cards"></div>
+  </div>
+
+  <div class="btn">
+    <button class="load_more" onclick="loadMoreCards()">Load More</button>
+  </div>
+
+  <script src="socialMedia.js"></script>
+</body>
+
 </html>

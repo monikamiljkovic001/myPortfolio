@@ -1,55 +1,124 @@
-let toDoInp = document.querySelector(".toDoInput");
-const btnAdd = document.querySelector("#buttonAdd");
-const checkedList = document.querySelector(".checkedList");
-const listBtn = document.querySelector("#myListBtn");
-const xClose = document.querySelector("#closeX");
+const taskAddButton = document.querySelector(".taskAddButton");
+const toggleListButton = document.querySelector("#toggleListButton");
+const taskInputField = document.querySelector("#taskInputField");
+const taskContainer = document.querySelector(".taskContainer");
+const taskWrapper = document.querySelector(".taskWrapper");
+const toggleVisibilityButton = document.querySelector(".toggleVisibilityButton");
+const successNotification = document.querySelector(".successNotification");
+const errorNotification = document.querySelector(".errorNotification");
 
-btnAdd.addEventListener("click", function () {
-  if (toDoInp.value.length == "") {
-    alert("Your field is empty");
+const maxVisibleCount = 5;
+let currentVisibleCount = maxVisibleCount;
+
+
+taskAddButton.addEventListener("click", function () {
+  if (taskInputField.value === "") {
+    showNotification(errorNotification, 2000);
+    console.log(errorNotification.textContent);
+  } 
+    else {
+    const taskElement = document.createElement("div");
+    taskElement.classList.add("taskCard");
+    taskWrapper.insertBefore(taskElement, toggleVisibilityButton);
+
+    const taskTextElement = document.createElement("p");
+    taskTextElement.textContent = taskInputField.value.trim();
+    taskElement.appendChild(taskTextElement);
+
+    showNotification(successNotification, 2000);
+    changeStyleTemporary(toggleListButton, "color", "var(--success)", 1000);
+
+    const deleteTaskButton = document.createElement("button");
+    deleteTaskButton.textContent = "REMOVE";
+    taskElement.appendChild(deleteTaskButton);
+
+    deleteTaskButton.addEventListener("click", function () {
+      this.parentElement.remove();
+    });
+
+    taskInputField.value = "";
+  }
+
+  refreshTaskVisibility();
+});
+
+
+function showNotification(notificationElement, duration) {
+  notificationElement.classList.add("visible");
+  setTimeout(() => {
+    notificationElement.classList.remove("visible");
+  }, duration);
+}
+
+
+function changeStyleTemporary(element, styleProperty, value, duration) {
+  const originalValue = window.getComputedStyle(element)[styleProperty];
+  element.style[styleProperty] = value;
+  setTimeout(() => {
+    element.style[styleProperty] = originalValue;
+  }, duration);
+}
+
+
+toggleListButton.addEventListener("click", function () {
+  taskContainer.classList.toggle("visible");
+  if (taskContainer.classList.contains("visible")) {
+    toggleListButton.textContent = "close";
+    toggleListButton.style.color = "var(--darkText)";
   } else {
-    let html = `<div class='tasks'>
-    <ul id='item1'>
-      <li>${toDoInp.value}</li>
-    </ul>
-    <button class='btnDelete'>Delete</button>
-    <button class='btnCheck'></button></div>`;
-    document.querySelector(".toDoList").innerHTML += html;
-    toDoInp.value = "";
-
-    let currentTask = document.querySelectorAll(".btnDelete");
-    currentTask.forEach((task) =>
-      task.addEventListener("click", function () {
-        this.parentNode.remove();
-      })
-    );
-
-    let currentTaskCheck = document.querySelectorAll(".btnCheck");
-    currentTaskCheck.forEach((checked) =>
-      checked.addEventListener("click", function () {
-        checked.style.backgroundColor = "rgb(81, 255, 0)";
-        checked.style.border = "0.5px solid";
-        checked.style.boxShadow = "1px 1px 15px rgb(81, 255, 0)";
-        setTimeout(() => {
-          checkedList.appendChild(this.parentNode);
-          checked.remove();
-        }, 1500);
-      })
-    );
+    toggleListButton.textContent = "my list";
+    toggleListButton.style.color = "var(--main)";
   }
 });
 
-const openList = function () {
-  checkedList.classList.remove("hidden");
-};
-const closeList = function () {
-  checkedList.classList.add("hidden");
-};
 
-listBtn.addEventListener("click", openList);
-xClose.addEventListener("click", closeList);
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    closeList();
+toggleVisibilityButton.addEventListener("click", function () {
+  const taskElements = document.querySelectorAll(".taskCard");
+
+  if (toggleVisibilityButton.textContent === "SHOW MORE") {
+    currentVisibleCount += maxVisibleCount;
+
+    taskElements.forEach((task, index) => {
+      if (index < currentVisibleCount) {
+        task.classList.remove("hidden");
+      }
+    });
+
+    if (currentVisibleCount >= taskElements.length) {
+      toggleVisibilityButton.textContent = "SHOW LESS";
+    }
+  } else {
+    currentVisibleCount = maxVisibleCount;
+    taskElements.forEach((task, index) => {
+      if (index >= currentVisibleCount) {
+        task.classList.add("hidden");
+      }
+    });
+    toggleVisibilityButton.textContent = "SHOW MORE";
   }
 });
+
+
+function refreshTaskVisibility() {
+  const taskElements = document.querySelectorAll(".taskCard");
+  currentVisibleCount = maxVisibleCount;
+
+  taskElements.forEach((task, index) => {
+    if (index < maxVisibleCount) {
+      task.classList.remove("hidden");
+    } else {
+      task.classList.add("hidden");
+    }
+  });
+
+  if (taskElements.length > maxVisibleCount) {
+    toggleVisibilityButton.style.display = "block";
+  } else {
+    toggleVisibilityButton.style.display = "none";
+  }
+
+  toggleVisibilityButton.textContent = "SHOW MORE";
+}
+
+
+refreshTaskVisibility();

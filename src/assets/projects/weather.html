@@ -1,28 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="weather.css" />
-    <title>Weather App</title>
-  </head>
-  <body>
-    <div class="weather">
-    <div class="input">
-      <input type="text" class="inputValue" placeholder="Enter a city" />
-      <input type="submit" class="submit" value="Submit" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="weather.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Italiana&family=Neucha&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <title>Weather App</title>
+</head>
+
+<body>
+
+  <div class="error">
+    <p>Error fetching weather data</p>
+  </div>
+
+  <div class="errorFieldEmpty">
+    <p>The field is empty</p>
+  </div>
+
+  <div class="weatherApp">
+
+    <div class="leftWrapper">
+      <div>
+        <h1>Weather</h1>
+      </div>
+
+      <div>
+        <div>
+          <p class="temperature"></p>
+        </div>
+        <div>
+          <p class="cityName"></p>
+          <div class="currentDateTime">
+            <p class="time"></p>
+            <p class="date"></p>
+          </div>
+        </div>
+        <div>
+          <img src="" class="icon" alt="Weather Icon" />
+          <p class="weather_main_clouds"></p>
+        </div>
+      </div>
     </div>
-      <h2 id="content">Weather application</h2>
-      <h1 class="nameCity"></h1>
-      <img src="" class="icon" alt="">
-      <h1 class="main_temp"></h3>
-      <h4 class="weather_main_clouds"></h4>
-      <h3 class="weather_description"></h3>
-      <h3 class="wind"></h3>
+
+    <div class="weatherDetails">
+      <div class="inputSection">
+        <input type="text" class="inputValue" placeholder="Another location" />
+        <button class="submit">Search</button>
+      </div>
+
+      <div class="details">
+        <div>
+          <p>Weather Details</p>
+        </div>
+        
+        <div>
+          <h3>Weather</h3>
+          <p class="weather"></p>
+        </div>
+
+        <div>
+          <h3>Feels Like</h3>
+          <p class="feels-like"></p>
+        </div>
+
+        <div>
+          <h3>Min Temp</h3>
+          <p class="min-temp"></p>
+        </div>
+
+        <div>
+          <h3>Max Temp</h3>
+          <p class="max-temp"></p>
+        </div>
+
+        <div>
+          <h3>Pressure</h3>
+          <p class="pressure"></p>
+        </div>
+
+        <div>
+          <h3>Humidity</h3>
+          <p class="humidity"></p>
+        </div>
+
+        <div>
+          <h3>Wind</h3>
+          <p class="wind"></p>
+        </div>
+
+        <div>
+          <h3>Cloudiness</h3>
+          <p class="cloudiness"></p>
+        </div>
+      </div>
+
     </div>
   </div>
-   
-    <script src="weather.js"></script>
-  </body>
+
+  <script src="weather.js"></script>
+</body>
+
 </html>

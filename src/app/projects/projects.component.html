@@ -1,9 +1,8 @@
-<div
-    class="min-h-screen w-full bg-black flex flex-col justify-between gap-14 overflow-x-auto scrollbar-hidden md:px-[6vw]">
+<div class="min-h-screen w-full bg-black flex flex-col justify-between gap-14 overflow-x-auto scrollbar-hidden md:px-[6vw]">
 
     <div class="bg-black opacity-[70%] fixed inset-0 z-0" (click)="closeSidenav()" *ngIf="isSideNavOpen"></div>
 
-    <app-navbar (sidenavToggle)="toggleSidenav()"></app-navbar>
+    <app-navbar (sidenavToggle)="toggleSidenav()" [isSideNavOpen]="isSideNavOpen" class="z-30"></app-navbar>
 
     <div class="overflow-x-auto scrollbar-hidden flex flex-col gap-5">
         <div class="flex flex-col md:flex-row items-center gap-2 px-[2rem]">
